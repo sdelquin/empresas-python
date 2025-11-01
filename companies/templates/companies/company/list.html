@@ -1,20 +1,25 @@
-<h3>
-  <i class="fa-solid fa-database"></i>
-  Empresas dadas de alta
-</h3>
+{% extends "base.html" %}
 
-{% if companies %}
-  <p>
-    Actualmente hay <strong>{{ num_companies }} empresa{{ num_companies|pluralize }}</strong> registrada{{ num_companies|pluralize }}.
-    {% if is_slice %}
-      <br>
-      <small class="pico-color-slate">(Mostrando las últimas {{ companies|length }} empresas añadidas)</small>
-    {% endif %}
-  </p>
-{% endif %}
+{% block content %}
+  <h2>Listado de empresas</h2>
 
-{% for company in companies %}
-  {% include "companies/company/detail.html" %}
-{% empty %}
-  <p>No hay empresas registradas.</p>
-{% endfor %}
+  {% if companies %}
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre ↑</th>
+          <th>Email</th>
+          <th>Ciudad</th>
+          <th>Contacto</th>
+          <th>Teléfono</th>
+          <th>Remoto</th>
+        </tr>
+      </thead>
+      {% for company in companies %}
+        {% include "companies/company/detail/row.html" %}
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No hay empresas registradas.</p>
+  {% endif %}
+{% endblock %}

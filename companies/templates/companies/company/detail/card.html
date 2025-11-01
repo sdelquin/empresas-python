@@ -1,9 +1,7 @@
+{% load company_extras %}
+
 <article>
-  {% if company.website %}
-    <a href="{{ company.website }}" target="_blank">{{ company }}</a>
-  {% else %}
-    {{ company }}
-  {% endif %}
+  {{ company|title }}
   <small class="pico-color-slate">
     (hace {{ company.created_at|timesince }})
   </small>

@@ -1,0 +1,24 @@
+<h3>
+  <i class="fa-solid fa-database"></i>
+  Empresas dadas de alta
+</h3>
+
+{% if companies %}
+  <p>
+    Actualmente hay <strong>{{ num_companies }} empresa{{ num_companies|pluralize }}</strong> registrada{{ num_companies|pluralize }}.
+    {% if is_slice %}
+      <br>
+      <small class="pico-color-slate">
+        Mostrando las últimas {{ companies|length }} empresas añadidas
+        →
+        <a href="{% url 'companies:company-list' %}">Ver todas</a>
+      </small>
+    {% endif %}
+  </p>
+{% endif %}
+
+{% for company in companies %}
+  {% include "companies/company/detail/card.html" %}
+{% empty %}
+  <p>No hay empresas registradas.</p>
+{% endfor %}

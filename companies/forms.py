@@ -30,7 +30,7 @@ class AddCompanyForm(forms.ModelForm):
         return name
 
     def clean_phone(self):
-        if phone := self.cleaned_data.get('phone'):
+        if phone := self.cleaned_data.get('phone', ''):
             if not re.fullmatch(r'\d{9}', phone := re.sub(r'\s+', '', phone)):
                 raise forms.ValidationError('El teléfono debe contener exactamente 9 dígitos.')
         return phone

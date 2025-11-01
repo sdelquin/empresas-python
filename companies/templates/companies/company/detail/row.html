@@ -1,0 +1,10 @@
+{% load company_extras %}
+
+<tr>
+  <td>{{ company|title }}</td>
+  <td>{{ company.email }}</td>
+  <td>{{ company.city }}</td>
+  <td>{{ company.contact_person }}</td>
+  <td>{{ company.phone }}</td>
+  <td>{{ company|is_remote }}</td>
+</tr>

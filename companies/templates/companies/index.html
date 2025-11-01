@@ -1,9 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% include "companies/company/add.html" %}
-{% endblock %}
+<p><i>
+  Detrás de esta pequeña aplicación web está <a href="https://sdelquin.matraka.es">Sergio Delgado Quintero</a>. El objetivo que persigo en crear un humilde repositorio de <mark>empresas que trabajan con Python</mark>, para varios fines, pero principalmente para poder tener opciones donde enviar alumnado en prácticas de ciclos de Formación Profesional de Grado Superior de Desarrollo de Aplicaciones Web y Desarrollo de Aplicaciones Multiplataforma del <a href="https://iespto.es">IES Puerto de la Cruz - Telesforo Bravo</a> donde soy profesor desde hace muchos años... ¿Nos ayudas? <i class="fa-regular fa-hand-peace"></i>
+</i></p>
 
-{% block sidebar %}
-    {% include "companies/company/list.html" %}
+<hr>
+
+<div class="grid">
+  <div>
+    {% include "companies/company/add.html" %}
+  </div>
+  <div>
+    {% include "companies/company/recent.html" %}
+  </div>
+</div>
 {% endblock %}

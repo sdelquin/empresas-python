@@ -20,14 +20,7 @@
     <main class="container">
       {% include "header.html" %}
       {% include "messages.html" %}
-      <div class="grid">
-          <div class="content">
-            {% block content %}{% endblock %}
-          </div>
-          <div class="sidebar">
-            {% block sidebar %}{% endblock %}
-          </div>
-        </div>
+      {% block content %}{% endblock %}
     </main>
     <footer class="container">
       <hr>

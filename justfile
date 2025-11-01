@@ -136,3 +136,17 @@ deploy:
     uv run ./manage.py migrate
     uv run ./manage.py collectstatic --no-input
     supervisorctl restart empresas-python
+
+# Clean data
+[group('data')]
+clean-data:
+    #!/usr/bin/env bash
+    uv run manage.py shell -v0 -c '
+    from companies.models import Company
+    Company.objects.all().delete()
+    '
+
+# Load initial data
+[group('data')]
+load-data:
+    uv run manage.py loaddata companies/fixtures/initial_data.json

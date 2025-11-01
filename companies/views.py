@@ -28,3 +28,8 @@ def index(request):
             'form': form,
         },
     )
+
+
+def company_list(request):
+    companies = Company.objects.all().order_by('name')
+    return render(request, 'companies/company/list.html', {'companies': companies})
