@@ -125,3 +125,13 @@ kill:
 [group('utils')]
 test pytest_args="":
     uv run pytest -s {{ pytest_args }}
+
+# Deploy project to production server
+[group('production')]
+deploy:
+    #!/usr/bin/env bash
+    git pull
+    uv sync --no-dev --group prod
+    uv run ./manage.py migrate
+    uv run ./manage.py collectstatic --no-input
+    supervisorctl restart empresas-python

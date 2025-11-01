@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+from prettyconf import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -122,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = config('STATIC_ROOT', default=BASE_DIR / 'static', cast=Path)
 STATICFILES_DIRS = [BASE_DIR / 'node_modules']
 
 # Default primary key field type
