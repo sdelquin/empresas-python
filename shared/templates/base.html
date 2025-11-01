@@ -5,7 +5,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    {% include "meta.html" %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+
+    {% include "og.html" %}
+
     <link rel="stylesheet" href="{% hashed_static '@picocss/pico/css/pico.min.css' %}">
     <link rel="stylesheet" href="{% hashed_static '@picocss/pico/css/pico.colors.min.css' %}">
     <link rel="stylesheet" href="{% hashed_static '@fortawesome/fontawesome-free/css/all.min.css' %}">
