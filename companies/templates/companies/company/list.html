@@ -1,0 +1,15 @@
+<h3><i class="fa-solid fa-database"></i> Empresas dadas de alta</h3>
+{% for company in companies %}
+    <article>
+      {% if company.website %}
+        <a href="{{ company.website }}" target="_blank">{{ company }}</a>
+      {% else %}
+        {{ company }}
+      {% endif %}
+      <small class="pico-color-slate">
+        (hace {{ company.created_at|timesince }})
+      </small>
+    </article>
+{% empty %}
+    <p>No hay empresas registradas.</p>
+{% endfor %}

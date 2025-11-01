@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="{% static '@picocss/pico/css/pico.min.css' %}">
+    <link rel="stylesheet" href="{% static '@picocss/pico/css/pico.colors.min.css' %}">
+    <link rel="stylesheet" href="{% static '@fortawesome/fontawesome-free/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <title>Empresas Python</title>
+  </head>
+  <body>
+    <main class="container">
+      {% include "header.html" %}
+      <div class="grid">
+          <div class="content">
+            {% block content %}{% endblock %}
+          </div>
+          <div class="sidebar">
+            {% block sidebar %}{% endblock %}
+          </div>
+        </div>
+    </main>
+  </body>
+</html>

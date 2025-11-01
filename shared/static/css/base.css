@@ -1,0 +1,14 @@
+ul.errorlist {
+  padding-inline-start: 0;
+  margin-block-end: 0;
+
+  li {
+    list-style-type: none;
+    font-size: small;
+    color: #c52f21;
+  }
+}
+
+div.grid {
+  column-gap: 10%;
+}
