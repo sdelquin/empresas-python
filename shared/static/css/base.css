@@ -12,3 +12,7 @@ ul.errorlist {
 div.grid {
   column-gap: 10%;
 }
+
+div.footer-right {
+  text-align: right;
+}
