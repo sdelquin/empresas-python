@@ -1,3 +1,5 @@
+import re
+
 from django import forms
 from django.utils.safestring import mark_safe
 
@@ -26,3 +28,9 @@ class AddCompanyForm(forms.ModelForm):
         if self._meta.model.objects.filter(name__iexact=name).exists():
             raise forms.ValidationError('Ya existe una empresa con este nombre.')
         return name
+
+    def clean_phone(self):
+        if phone := self.cleaned_data.get('phone'):
+            if not re.fullmatch(r'\d{9}', phone := re.sub(r'\s+', '', phone)):
+                raise forms.ValidationError('El teléfono debe contener exactamente 9 dígitos.')
+        return phone
