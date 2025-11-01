@@ -6,7 +6,7 @@ from .models import Company
 class AddCompanyForm(forms.ModelForm):
     class Meta:
         model = Company
-        fields = ['name', 'email', 'city', 'contact_person', 'website', 'remote', 'remarks']
+        exclude = ['slug']
         widgets = {
             'remarks': forms.Textarea(attrs={'rows': 3}),
         }
