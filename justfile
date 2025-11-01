@@ -132,6 +132,7 @@ deploy:
     #!/usr/bin/env bash
     git pull
     uv sync --no-dev --group prod
+    npm install --no-audit --no-fund
     uv run ./manage.py migrate
     uv run ./manage.py collectstatic --no-input
     supervisorctl restart empresas-python
