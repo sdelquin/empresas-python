@@ -131,3 +131,5 @@ STATICFILES_DIRS = [BASE_DIR / 'node_modules']
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+COMPANY_DISPLAY_LIMIT = config('COMPANY_DISPLAY_LIMIT', default=10, cast=int)

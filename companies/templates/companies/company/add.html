@@ -1,6 +1,10 @@
-<h3><i class="fa-solid fa-circle-plus"></i> Dar de alta una empresa</h3>
+<h3>
+  <i class="fa-solid fa-circle-plus"></i>
+  Dar de alta una empresa
+</h3>
+
 <form method="post" novalidate>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Añadir empresa</button>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Añadir empresa</button>
 </form>

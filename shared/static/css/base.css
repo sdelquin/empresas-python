@@ -30,3 +30,7 @@ a.void {
   text-decoration: none;
   color: inherit;
 }
+
+.void[data-tooltip] {
+  border-bottom: none;
+}

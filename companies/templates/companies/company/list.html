@@ -1,15 +1,20 @@
-<h3><i class="fa-solid fa-database"></i> Empresas dadas de alta</h3>
+<h3>
+  <i class="fa-solid fa-database"></i>
+  Empresas dadas de alta
+</h3>
+
+{% if companies %}
+  <p>
+    Actualmente hay <strong>{{ num_companies }} empresa{{ num_companies|pluralize }}</strong> registrada{{ num_companies|pluralize }}.
+    {% if is_slice %}
+      <br>
+      <small class="pico-color-slate">(Mostrando las últimas {{ companies|length }} empresas añadidas)</small>
+    {% endif %}
+  </p>
+{% endif %}
+
 {% for company in companies %}
-    <article>
-      {% if company.website %}
-        <a href="{{ company.website }}" target="_blank">{{ company }}</a>
-      {% else %}
-        {{ company }}
-      {% endif %}
-      <small class="pico-color-slate">
-        (hace {{ company.created_at|timesince }})
-      </small>
-    </article>
+  {% include "companies/company/detail.html" %}
 {% empty %}
-    <p>No hay empresas registradas.</p>
+  <p>No hay empresas registradas.</p>
 {% endfor %}

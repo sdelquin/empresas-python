@@ -1,0 +1,13 @@
+<article>
+  {% if company.website %}
+    <a href="{{ company.website }}" target="_blank">{{ company }}</a>
+  {% else %}
+    {{ company }}
+  {% endif %}
+  <small class="pico-color-slate">
+    (hace {{ company.created_at|timesince }})
+  </small>
+  {% if company.remote %}
+    <span class="void" data-tooltip="Remoto"><i class="fa-solid fa-house-laptop"></i></span>
+  {% endif %}
+</article>
