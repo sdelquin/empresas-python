@@ -16,6 +16,7 @@
   <body>
     <main class="container">
       {% include "header.html" %}
+      {% include "messages.html" %}
       <div class="grid">
           <div class="content">
             {% block content %}{% endblock %}
@@ -32,4 +33,5 @@
       </section>
     </footer>
   </body>
+  <script src="{% hashed_static 'js/base.js' %}"></script>
 </html>

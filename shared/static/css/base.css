@@ -16,3 +16,17 @@ div.grid {
 div.footer-right {
   text-align: right;
 }
+
+div.messages {
+  article.success {
+    color: #347854;
+    border-color: #347854;
+    border-style: solid;
+    border-width: thin;
+  }
+}
+
+a.void {
+  text-decoration: none;
+  color: inherit;
+}
