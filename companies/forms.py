@@ -20,7 +20,7 @@ class AddCompanyForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             if field.required:
                 field.label = mark_safe(
-                    f'{field.label}<sup><i class="fa-solid fa-asterisk pico-color-pink"></i></sup>'
+                    f'{field.label}<sup><i class="fa-solid fa-asterisk pico-color-red-500"></i></sup>'
                 )
 
     def clean_name(self):
