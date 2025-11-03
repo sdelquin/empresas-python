@@ -138,7 +138,7 @@ deploy:
     supervisorctl restart empresas-python
 
 # Generate random secret key
-[group('config')]
+[group('production')]
 secret-key:
     #!/usr/bin/env bash
     uv run manage.py shell -v0 -c '
