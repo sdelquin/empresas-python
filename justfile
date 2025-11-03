@@ -137,6 +137,15 @@ deploy:
     uv run ./manage.py collectstatic --no-input
     supervisorctl restart empresas-python
 
+# Generate random secret key
+[group('config')]
+secret-key:
+    #!/usr/bin/env bash
+    uv run manage.py shell -v0 -c '
+    from django.core.management.utils import get_random_secret_key
+    print(get_random_secret_key())
+    '
+
 # Clean data
 [group('data')]
 clean-data:
