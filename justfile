@@ -157,5 +157,5 @@ clean-data:
 
 # Load initial data
 [group('data')]
-load-data:
+load-data: clean-data
     uv run manage.py loaddata companies/fixtures/initial_data.json
