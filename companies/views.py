@@ -11,7 +11,7 @@ def index(request):
         if (form := AddCompanyForm(request.POST)).is_valid():
             form.save()
             messages.success(request, 'Empresa añadida correctamente.')
-            return redirect('index')
+            return redirect('companies:index')
     else:
         form = AddCompanyForm()
     all_companies = Company.objects.all()
